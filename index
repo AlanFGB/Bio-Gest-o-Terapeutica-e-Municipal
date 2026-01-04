@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio-Gestão Terapêutica Municipal - GitHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+/* CSS Reset e Setup Consultoria */
+* { box-sizing: border-box; }
+p { margin: 0; margin-bottom: 15px; }
+body { background-color: #f1f5f9; display: grid; gap: 20px; grid-template-columns: 1fr; margin: 0; min-height: 100vh; padding: 20px 0; place-items: center; }
+
+.slide-container {
+  align-items: center;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  font-family: 'Lato', sans-serif;
+  height: 720px;
+  justify-content: center;
+  overflow: hidden;
+  padding: 60px;
+  position: relative;
+  width: 1280px;
+}
+
+/* Background Design: Abstract Green Shapes */
+.slide-container::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.05) 0%, transparent 70%);
+  z-index: 0;
+}
+
+.slide-container > * { position: relative; z-index: 1; }
+
+/* Tipografia */
+.slide-container h1, .slide-container h2, .slide-container h3 {
+  color: #064e3b;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+}
+
+.slide-container h1 { font-size: 70px; margin-bottom: 20px; }
+.slide-container .slide-title { font-size: 40px; margin-bottom: 40px; text-align: left; width: 100%; border-left: 8px solid #10b981; padding-left: 20px; }
+.slide-container h3 { font-size: 32px; margin-bottom: 15px; color: #10b981; }
+.slide-container p, .slide-container li { font-size: 20px; line-height: 1.5; color: #334155; }
+
+.content-area { display: flex; flex-direction: column; flex-grow: 1; justify-content: center; width: 100%; }
+
+/* Layouts */
+.two-column { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; width: 100%; align-items: center; }
+.image-wrapper { border-radius: 12px; height: 400px; overflow: hidden; box-shadow: 0 8px 16px rgba(0,0,0,0.1); }
+.image-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+
+.tile { background-color: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0; padding: 30px; text-align: center; flex: 1; }
+.tile i { font-size: 48px; color: #10b981; margin-bottom: 20px; }
+
+/* Bleed Image Customization */
+.bleed-image-layout { align-items: start; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 0; }
+.bleed-image-layout > .content-container { padding: 60px; display: flex; flex-direction: column; justify-content: center; height: 100%; }
+.bleed-image-layout .bleed-image-side { height: 720px; width: 100%; object-fit: cover; }
+
+/* Highlight Numbers */
+.number { color: #10b981; font-size: 150px; font-weight: 700; font-family: 'Poppins', sans-serif; line-height: 1; }
+
+/* Area Chart */
+.area-chart-svg { width: 100%; height: 350px; overflow: visible; }
+.area-fill { fill: rgba(16, 185, 129, 0.2); stroke: #10b981; stroke-width: 4; }
+
+/* Table */
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th, td { padding: 15px; border-bottom: 1px solid #e2e8f0; text-align: left; }
+th { background-color: #f8fafc; color: #064e3b; }
+
+    </style>
+</head>
+<body>
+
+<!-- Slide 1: Title_Slide -->
+<div class="slide-container" id="slide1" style="background: linear-gradient(135deg, #064e3b 0%, #022c22 100%);">
+    <div style="text-align: center; color: white;">
+        <i class="fa-solid fa-seedling" style="font-size: 100px; color: #10b981; margin-bottom: 30px;"></i>
+        <h1 style="color: white;">Bio-Gestão Terapêutica</h1>
+        <p style="color: #d1d5db; font-size: 24px; margin-bottom: 40px;">Recuperação Social e Urbana via Reflorestamento Nativo</p>
+        <div style="background: rgba(255,255,255,0.1); padding: 15px 30px; border-radius: 50px; display: inline-block;">
+            <p style="color: #10b981; font-weight: bold; margin: 0;"><i class="fa-brands fa-github"></i> github.com/username/biogestao-municipal</p>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 2: Versatilidade de Locais Públicos -->
+<div class="slide-container" id="slide2">
+    <h2 class="slide-title">Infraestrutura Social Multi-Local</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div>
+                <p>O software gerencia a ocupação de <b>diversos espaços públicos</b> aos finais de semana, transformando-os em polos de saúde e ecologia:</p>
+                <ul>
+                    <li><b>Escolas:</b> Salas para grupos teóricos e hortas pedagógicas.</li>
+                    <li><b>Centros Esportivos/Clubes:</b> Espaço para dinâmicas e biofábricas.</li>
+                    <li><b>Parques Municipais:</b> Áreas de plantio e vivência prática direta.</li>
+                    <li><b>Centros de Convenções:</b> Grandes palestras e feiras de insumos.</li>
+                </ul>
+            </div>
+            <div class="image-wrapper">
+                <img src="https://images.unsplash.com/photo-1541444196041-fb43f28b248a?q=80&w=1000&auto=format&fit=crop" alt="[Imagem de um centro comunitário público ou parque]">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 3: Equipe Técnica e Voluntariado -->
+<div class="slide-container" id="slide3">
+    <h2 class="slide-title">Equipe Técnica e Voluntariado</h2>
+    <div class="content-area">
+        <div style="display: flex; gap: 30px;">
+            <div class="tile">
+                <i class="fa-solid fa-user-doctor"></i>
+                <h3>Supervisores</h3>
+                <p>Psicólogos municipais que validam a evolução clínica dos participantes.</p>
+            </div>
+            <div class="tile">
+                <i class="fa-solid fa-hands-holding-child"></i>
+                <h3>Voluntários</h3>
+                <p>Palestrantes e mediadores que apoiam a logística e as dinâmicas de grupo.</p>
+            </div>
+            <div class="tile">
+                <i class="fa-solid fa-id-badge"></i>
+                <h3>Mentores</h3>
+                <p>Ex-pacientes (Alta Verde) que agora lideram novas frentes de trabalho.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 4: Fase 1 - Limpeza Urbana -->
+<div class="slide-container" id="slide4">
+    <h2 class="slide-title">Ação Prática: Limpeza Urbana</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div class="image-wrapper">
+                <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=1000&auto=format&fit=crop" alt="[Imagem de limpeza de área degradada]">
+            </div>
+            <div>
+                <h3>Cura Externa e Interna</h3>
+                <p>A recuperação do indivíduo começa com a <b>retirada de resíduos sólidos</b> de áreas degradadas da cidade.</p>
+                <div style="background: #ecfdf5; padding: 20px; border-radius: 12px;">
+                    <p style="font-style: italic; font-size: 18px;">"Ao organizar o espaço público, o paciente aprende a organizar seu mundo interno."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 5: Fase 2 - Conservação (Só Nativas) -->
+<div class="slide-container bleed-image-layout" id="slide5">
+    <div class="content-container">
+        <h2 class="slide-title" style="border: none; padding: 0;">Biodiversidade Nativa</h2>
+        <p>Utilizamos os catálogos <b>Click Mudas</b> e <b>Só Nativas</b> para selecionar espécies críticas do bioma local.</p>
+        <ul style="margin-top: 20px;">
+            <li>Pau-Brasil (Conservação Histórica)</li>
+            <li>Jequitibá-Rosa (Recuperação Clímax)</li>
+            <li>Ipês (Impacto Estético e Urbano)</li>
+        </ul>
+    </div>
+    <div class="image-container">
+        <img class="bleed-image-side" src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?q=80&w=1000&auto=format&fit=crop" alt="[Imagem de viveiro de mudas]">
+    </div>
+</div>
+
+<!-- Slide 6: Biofábrica de Insumos -->
+<div class="slide-container" id="slide6">
+    <h2 class="slide-title">Biofábrica Municipal</h2>
+    <div class="content-area">
+        <div style="display: flex; gap: 30px;">
+            <div class="tile" style="border-top: 4px solid #8b5cf6;">
+                <i class="fa-solid fa-flask-vial"></i>
+                <h3>Manipueira</h3>
+                <p>Inseticida, acaricida e fungicida 100% natural derivado da mandioca.</p>
+            </div>
+            <div class="tile" style="border-top: 4px solid #10b981;">
+                <i class="fa-solid fa-microscope"></i>
+                <h3>Trichoderma</h3>
+                <p>Fungicida biológico para recuperação de espécies nativas doentes.</p>
+            </div>
+            <div class="tile" style="border-top: 4px solid #f59e0b;">
+                <i class="fa-solid fa-dna"></i>
+                <h3>Valina</h3>
+                <p>Uso de aminoácidos específicos para acelerar a germinação de sementes raras.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 7: Regeneração do Solo -->
+<div class="slide-container" id="slide7">
+    <h2 class="slide-title">Adubação Verde: Mucuna</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div>
+                <div class="number">100%</div>
+                <p style="font-weight: bold; font-size: 24px;">Solo Orgânico</p>
+                <p>O uso da <b>Mucuna pruriens</b> garante a fixação de nitrogênio e a descompactação do solo antes do plantio das nativas.</p>
+            </div>
+            <div class="image-wrapper">
+                <img src="https://images.unsplash.com/photo-1594901850563-f44a49c6696b?q=80&w=1000&auto=format&fit=crop" alt="[Imagem de leguminosa ou adubação verde]">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 8: Logística de Coleta Orgânica -->
+<div class="slide-container" id="slide8">
+    <h2 class="slide-title">Circularidade de Insumos</h2>
+    <div class="content-area">
+        <table>
+            <thead>
+                <tr>
+                    <th>Resíduo Coletado</th>
+                    <th>Processamento</th>
+                    <th>Valor Agregado (Finalidade)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Casca de Banana e Cebola</td>
+                    <td>Compostagem acelerada</td>
+                    <td>Adubo rico em Potássio e Fósforo</td>
+                </tr>
+                <tr>
+                    <td>Erva Mate (Pós-consumo)</td>
+                    <td>Secagem e trituração</td>
+                    <td>Condicionador de solo e nutrientes</td>
+                </tr>
+                <tr>
+                    <td>Mandioca (Manipueira)</td>
+                    <td>Decantação e fermentação</td>
+                    <td>Defensivo natural e crescimento vegetativo</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Slide 9: O Diário Bio-Psíquico -->
+<div class="slide-container" id="slide9">
+    <h2 class="slide-title">Índice de Regeneração (IRI)</h2>
+    <div class="content-area">
+        <p>Monitoramos o sucesso através da correlação entre a saúde da planta e a evolução emocional.</p>
+        <div id="formula-container" style="background: #f1f5f9; padding: 20px; border-radius: 12px; margin-bottom: 30px; text-align: center;">
+            <p style="font-family: 'Poppins'; font-weight: bold; font-size: 24px;">IRI = (Evolução Clínica + Saúde Biológica) / Tempo</p>
+        </div>
+        <svg class="area-chart-svg" viewBox="0 0 1000 300">
+            <path class="area-fill" d="M0,280 Q250,230 500,160 T1000,40 L1000,300 L0,300 Z" />
+            <text x="0" y="295" font-size="14">Início (Acolhimento)</text>
+            <text x="500" y="295" font-size="14" text-anchor="middle">Ação (Limpeza/Biofábrica)</text>
+            <text x="1000" y="295" font-size="14" text-anchor="end">Alta Verde (Mentor)</text>
+        </svg>
+    </div>
+</div>
+
+<!-- Slide 10: Retorno à Comunidade -->
+<div class="slide-container" id="slide10">
+    <h2 class="slide-title">Segurança Alimentar e Saúde</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div class="image-wrapper">
+                <img src="https://images.unsplash.com/photo-1590779033100-9f60705a2f3b?q=80&w=1000&auto=format&fit=crop" alt="[Imagem de cesta de alimentos orgânicos]">
+            </div>
+            <div>
+                <p>Os grupos evoluídos começam a fornecer alimentos orgânicos para a <b>merenda escolar municipal</b> ou bancos de alimentos.</p>
+                <ul>
+                    <li>Redução de custos municipais em insumos agrícolas.</li>
+                    <li>Melhoria da saúde pública via alimentação limpa.</li>
+                    <li>Ocupação terapêutica com propósito econômico.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 11: Arquitetura de Software -->
+<div class="slide-container" id="slide11">
+    <h2 class="slide-title">Open Source no GitHub</h2>
+    <div class="content-area">
+        <div style="display: flex; gap: 30px;">
+            <div class="tile">
+                <i class="fa-solid fa-code-branch"></i>
+                <h3>Escalabilidade</h3>
+                <p>Feito para ser clonado por qualquer município do Brasil.</p>
+            </div>
+            <div class="tile">
+                <i class="fa-solid fa-database"></i>
+                <h3>Multi-Locais</h3>
+                <p>Gestão centralizada de diversos endereços e polos de atendimento.</p>
+            </div>
+            <div class="tile">
+                <i class="fa-solid fa-lock"></i>
+                <h3>Privacidade</h3>
+                <p>Protocolos de segurança para dados sensíveis de pacientes.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 12: Q&A -->
+<div class="slide-container" id="slide12">
+    <div style="text-align: center; width: 100%;">
+        <h2 style="font-size: 80px; margin-bottom: 20px;">Dúvidas?</h2>
+        <p style="font-size: 24px;">Acesse a documentação completa e contribua com o código.</p>
+        <div style="margin-top: 50px;">
+            <p style="font-weight: bold; color: #10b981;"><i class="fa-brands fa-github"></i> github.com/username/biogestao-municipal</p>
+            <p style="color: #64748b; margin-top: 20px;">projeto@biogestao.gov.br</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
